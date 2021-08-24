@@ -1,10 +1,13 @@
 /*
 What is JSON
+
 Object
 Array
 Number
 String
+
     "Literal Values"
+
 false
 true
 null
@@ -12,13 +15,12 @@ null
 // Modify the 3 type JSON* values to parse json and fail otherwise
 // Use the isJson function to test
 
-
 function isJSON(j: JSONValue){}
 type Primative = string | number | boolean | null
 
-type JSONObject = any
-type JSONArray = any
-type JSONValue = any
+type JSONObject = {[k: string]: JSONValue}
+type JSONArray = JSONValue[]
+type JSONValue = Primative | JSONObject | JSONArray
 
 let testing1: JSONValue = { fname: "Shavonne", data: [1, 2, 3]}
 let testing2: JSONValue = "Test string"
@@ -32,7 +34,7 @@ let test2: JSONValue = { fname: "Shavonne", data: [1, 2, 3]}
 let test3: JSONValue = { fname: "Shavonne", data: [1, 2, 3]}
 
 // @ts-expect-error
-// isJSON(class Test{})
+isJSON(class Test{})
 
 // @ts-expect-error
-// isJSON(isJSON)
+isJSON(isJSON)
