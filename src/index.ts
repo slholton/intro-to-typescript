@@ -20,12 +20,19 @@ type Student = {
     grade: number
 }
 
-let student = {
+let student: Student = {
     fname: "Andy",
     lname: "Anderson",
     grade: 12
 }
 
+let student2: Student = {
+    fname: "Bob",
+    lname: "Procter",
+    grade: 12
+}
+
+let sqr = (x:number): number => x*x
 function toString(student: Student): string {
     return JSON.stringify(student)
 }
@@ -41,16 +48,11 @@ function add(x: number, y: number): number {
     let result = x + y
     return result
 }
-
-// const [statusResult, data] = sendMessage()
-// if (statusResult == "success")
-//     console.log(data.fname)
-
 // Any & Void
 
 // Union
 type Status = "success" | "failure"
-type ServerResponse = Student | Error
+type ServerResponse = Student | string
 // Tuple
 function sendMessage(): [status: Status, response: ServerResponse] 
 {
@@ -62,14 +64,15 @@ function sendMessage(): [status: Status, response: ServerResponse]
             lname: "H",
             grade: 12
         }]
-    // } else {
-        // return ["failure", "Something failed"]
-    // }
+    } else {
+        return ["failure", "Something failed"]
+    }
 }
 
 for(let i=0; i<10; i++){
     let [statusResult, data] = sendMessage()
-    console.log(statusResult)
+    if (statusResult == "success")
+    console.log(data)
 }
 
 
