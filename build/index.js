@@ -1,35 +1,41 @@
 "use strict";
 // count is a "type" number
-var count = 5;
+let count = 5;
 count = 10;
 // count = "Shavonne"
 // Const's type is a literal
-var fname = "Shavonne";
+const fname = "Shavonne";
 // this makes a var of type any
 // let testing;
-var testing;
+let testing;
 // testing = "Shavonne"
 testing = 5;
-var student = {
+let student = {
     fname: "Andy",
     lname: "Anderson",
     grade: 12
 };
+let student2 = {
+    fname: "Bob",
+    lname: "Procter",
+    grade: 12
+};
+let sqr = (x) => x * x;
 function toString(student) {
     return JSON.stringify(student);
 }
-var toStringArrow = function (student) {
+const toStringArrow = (student) => {
     return JSON.stringify(student);
 };
 console.log(toString(student));
 console.log(add(5, testing));
 function add(x, y) {
-    var result = x + y;
+    let result = x + y;
     return result;
 }
 // Tuple
 function sendMessage() {
-    var tmp = Math.round((Math.random()));
+    let tmp = Math.round((Math.random()));
     if (tmp == 1) {
         return ["success", {
                 fname: "Shavonne",
@@ -41,7 +47,8 @@ function sendMessage() {
         return ["failure", "Something failed"];
     }
 }
-for (var i = 0; i < 10; i++) {
-    var _a = sendMessage(), statusResult = _a[0], data = _a[1];
-    console.log(statusResult);
+for (let i = 0; i < 10; i++) {
+    let [statusResult, data] = sendMessage();
+    if (statusResult == "success")
+        console.log(data);
 }
