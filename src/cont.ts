@@ -29,6 +29,7 @@ if (typeof z == "string"){
 let myObj: number[] | object
 myObj = [1, 2, 3]
 myObj = { fname: "Shavonne"}
+
 if (myObj instanceof Array) {
     console.log(myObj)
 } else {
@@ -37,4 +38,3 @@ if (myObj instanceof Array) {
 }
 
 //myObj.map()
-// interface 

@@ -26,4 +26,3 @@ else {
     console.log(values);
 }
 //myObj.map()
-// interface 

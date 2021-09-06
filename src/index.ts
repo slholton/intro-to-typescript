@@ -50,6 +50,7 @@ function add(x: number, y: number): number {
 }
 // Any & Void
 
+
 // Union
 type Status = "success" | "failure"
 type ServerResponse = Student | string
